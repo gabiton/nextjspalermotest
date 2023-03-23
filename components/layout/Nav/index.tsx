@@ -48,7 +48,7 @@ const Nav = ({ location, className }) => {
 	return (
 		<nav className={className}>
 			<ul>
-				{data.menus.nodes[0].menuItems.edges.map((item, key) => (
+				{data["menus"].nodes[0].menuItems.edges.map((item, key) => (
 					<li key={key}>
 						<Link href={item.node.uri}>
 							{item.node.label}
