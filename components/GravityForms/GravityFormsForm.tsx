@@ -1,7 +1,7 @@
 import { useMutation, gql } from "@apollo/client";
 
-import { GravityFormsForm as GravityFormsFormType, FormField, FieldError } from "../generated/graphql";
-import useGravityForm from "../hooks/useGravityForm";
+import { GravityFormsForm as GravityFormsFormType, FormField, FieldError } from "../../generated/graphql";
+import useGravityForm from "../../hooks/useGravityForm";
 import GravityFormsField from "./GravityFormsField";
 
 const SUBMIT_FORM = gql`

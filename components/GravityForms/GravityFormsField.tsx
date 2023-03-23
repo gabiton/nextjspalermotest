@@ -1,4 +1,4 @@
-import { FormField, FieldError } from "../generated/graphql";
+import { FormField, FieldError } from "../../generated/graphql";
 import AddressField from "./GravityFormsFields/AddressField";
 import CheckboxField from "./GravityFormsFields/CheckboxField";
 import DateField from "./GravityFormsFields/DateField";

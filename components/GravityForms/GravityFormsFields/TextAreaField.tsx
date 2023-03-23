@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 
-import { TextAreaField as TextAreaFieldType, FieldError } from "../../generated/graphql";
-import useGravityForm, { ACTION_TYPES, FieldValue, StringFieldValue } from "../../hooks/useGravityForm";
+import { TextAreaField as TextAreaFieldType, FieldError } from "../../../generated/graphql";
+import useGravityForm, { ACTION_TYPES, FieldValue, StringFieldValue } from "../../../hooks/useGravityForm";
 
 export const TEXT_AREA_FIELD_FIELDS = gql`
   fragment TextAreaFieldFields on TextAreaField {

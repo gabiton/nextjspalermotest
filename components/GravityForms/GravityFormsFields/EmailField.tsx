@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 
-import { EmailField as EmailFieldType, FieldError } from "../../generated/graphql";
-import useGravityForm, { ACTION_TYPES, FieldValue, EmailFieldValue } from "../../hooks/useGravityForm";
+import { EmailField as EmailFieldType, FieldError } from "../../../generated/graphql";
+import useGravityForm, { ACTION_TYPES, FieldValue, EmailFieldValue } from "../../../hooks/useGravityForm";
 
 export const EMAIL_FIELD_FIELDS = gql`
   fragment EmailFieldFields on EmailField {

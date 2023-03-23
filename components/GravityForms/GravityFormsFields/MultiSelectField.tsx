@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 import Select, { ValueType, ActionMeta, OptionTypeBase } from "react-select";
 
-import { MultiSelectField as MultiSelectFieldType, FieldError } from "../../generated/graphql";
-import useGravityForm, { ACTION_TYPES, FieldValue, StringFieldValues } from "../../hooks/useGravityForm";
+import { MultiSelectField as MultiSelectFieldType, FieldError } from "../../../generated/graphql";
+import useGravityForm, { ACTION_TYPES, FieldValue, StringFieldValues } from "../../../hooks/useGravityForm";
 
 export const MULTI_SELECT_FIELD_FIELDS = gql`
   fragment MultiSelectFieldFields on MultiSelectField {

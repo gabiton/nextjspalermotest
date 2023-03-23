@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 
-import { NameField as NameFieldType, NameInput, FieldError } from "../../generated/graphql";
-import useGravityForm, { ACTION_TYPES, FieldValue, NameFieldValue } from "../../hooks/useGravityForm";
+import { NameField as NameFieldType, NameInput, FieldError } from "../../../generated/graphql";
+import useGravityForm, { ACTION_TYPES, FieldValue, NameFieldValue } from "../../../hooks/useGravityForm";
 
 export const NAME_FIELD_FIELDS = gql`
   fragment NameFieldFields on NameField {

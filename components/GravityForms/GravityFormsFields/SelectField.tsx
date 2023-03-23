@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 
-import { SelectField as SelectFieldType, FieldError } from "../../generated/graphql";
-import useGravityForm, { ACTION_TYPES, FieldValue, StringFieldValue } from "../../hooks/useGravityForm";
+import { SelectField as SelectFieldType, FieldError } from "../../../generated/graphql";
+import useGravityForm, { ACTION_TYPES, FieldValue, StringFieldValue } from "../../../hooks/useGravityForm";
 
 export const SELECT_FIELD_FIELDS = gql`
   fragment SelectFieldFields on SelectField {

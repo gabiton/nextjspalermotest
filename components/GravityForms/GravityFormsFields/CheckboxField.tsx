@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 
-import { CheckboxField as CheckboxFieldType, CheckboxInput, FieldError } from "../../generated/graphql";
-import useGravityForm, { ACTION_TYPES, FieldValue, CheckboxFieldValue } from "../../hooks/useGravityForm";
+import { CheckboxField as CheckboxFieldType, CheckboxInput, FieldError } from "../../../generated/graphql";
+import useGravityForm, { ACTION_TYPES, FieldValue, CheckboxFieldValue } from "../../../hooks/useGravityForm";
 
 export const CHECKBOX_FIELD_FIELDS = gql`
   fragment CheckboxFieldFields on CheckboxField {

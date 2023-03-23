@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 
-import { WebsiteField as WebsiteFieldType, FieldError } from "../../generated/graphql";
-import useGravityForm, { ACTION_TYPES, FieldValue, StringFieldValue } from "../../hooks/useGravityForm";
+import { WebsiteField as WebsiteFieldType, FieldError } from "../../../generated/graphql";
+import useGravityForm, { ACTION_TYPES, FieldValue, StringFieldValue } from "../../../hooks/useGravityForm";
 
 export const WEBSITE_FIELD_FIELDS = gql`
   fragment WebsiteFieldFields on WebsiteField {

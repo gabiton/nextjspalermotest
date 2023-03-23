@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 
-import { RadioField as RadioFieldType, FieldError } from "../../generated/graphql";
-import useGravityForm, { ACTION_TYPES, FieldValue, StringFieldValue } from "../../hooks/useGravityForm";
+import { RadioField as RadioFieldType, FieldError } from "../../../generated/graphql";
+import useGravityForm, { ACTION_TYPES, FieldValue, StringFieldValue } from "../../../hooks/useGravityForm";
 
 export const RADIO_FIELD_FIELDS = gql`
   fragment RadioFieldFields on RadioField {

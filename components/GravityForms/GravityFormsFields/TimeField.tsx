@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 
-import { TimeField as TimeFieldType, FieldError } from "../../generated/graphql";
-import useGravityForm, { ACTION_TYPES, FieldValue, StringFieldValue } from "../../hooks/useGravityForm";
+import { TimeField as TimeFieldType, FieldError } from "../../../generated/graphql";
+import useGravityForm, { ACTION_TYPES, FieldValue, StringFieldValue } from "../../../hooks/useGravityForm";
 
 export const TIME_FIELD_FIELDS = gql`
   fragment TimeFieldFields on TimeField {

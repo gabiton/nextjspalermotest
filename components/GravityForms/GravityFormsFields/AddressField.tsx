@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 import React from "react";
 
-import { AddressField as AddressFieldType, AddressInput, FieldError } from "../../generated/graphql";
-import useGravityForm, { ACTION_TYPES, FieldValue, AddressFieldValue } from "../../hooks/useGravityForm";
+import { AddressField as AddressFieldType, AddressInput, FieldError } from "../../../generated/graphql";
+import useGravityForm, { ACTION_TYPES, FieldValue, AddressFieldValue } from "../../../hooks/useGravityForm";
 
 export const ADDRESS_FIELD_FIELDS = gql`
   fragment AddressFieldFields on AddressField {
