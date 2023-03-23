@@ -2,7 +2,7 @@
 
 
 
-export default function Form({ form }: Props) {
+export default function Form({ form }) {
 
 /*
 
