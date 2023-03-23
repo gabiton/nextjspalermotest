@@ -1,4 +1,4 @@
-const Svg = ({ props }) => (
+const Svg = ({  }) => (
 <svg xmlns="http://www.w3.org/2000/svg" width={2500} height={1438} {...props}>
 <polygon className="pagehero_st0" points="726,678 1480.8,-76 -10,-76 -10,1464 2540,1464 2540,678 "/>
 <path className="pagehero_st1" d="M-617-664L725,680"/>
