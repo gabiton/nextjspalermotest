@@ -1,21 +1,60 @@
-import { GetStaticProps } from 'next'
+import { GetStaticPaths, GetStaticProps } from "next";
+import { getAllPagesWithSlugs, getPageBySlug } from "@/lib/api";
+
 import SiteTemplate from "@/components/layout/SiteTemplate";
-import { getAllPostsForHome } from '../lib/api'
+import * as blocks from "@/blocks/index";
 
-export default function Index({ allPosts: { edges }, preview }) {
-  //console.log( allPosts );
-  return (
-    <SiteTemplate>      
-      Index
-    </SiteTemplate>
-  )
+function dashCasetoPascalCase(str) {
+	return str
+		.replace(/-([a-z])/g, function (g) {
+			return g[1].toUpperCase();
+		})
+		.replace(/^[a-z]/, function (g) {
+			return g.toUpperCase();
+		})
+		.replace('-','');
 }
 
-export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
-  const allPosts = await getAllPostsForHome(preview)
+const Page = ({ data }) => {
+	var page = data.page;
+	var pagecontent = [];
+	
+	if (page && page.gbcontent) {
+		var content = JSON.parse(page.gbcontent);
+		content.map((element, key) => {
+			if (element.name !== null) {
+				let blockName = element.name.split("/");
+				
+				if (blockName[0] == "core") {
+					pagecontent.push(<blocks.default.Core key={key} data={element.html} />);
+				} else{
+					blockName = dashCasetoPascalCase(blockName[1]);
+					if ( blocks.default[blockName] ) {
+						let BlockComponent = blocks.default[blockName];
+						pagecontent.push(
+							<BlockComponent key={key} data={element.fields} />
+						);
+					} else {
+						console.warn("Missing component for block: " + blockName);
+					}
+				}
+			}
+		});
+	}
 
-  return {
-    props: { allPosts, preview },
-    revalidate: 10,
-  }
-}
+	return <SiteTemplate>{pagecontent}</SiteTemplate>;
+};
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+	const data = await getPageBySlug('/');
+
+	return {
+		props: {
+			data: data
+		},
+		revalidate: 10,
+	};
+};
+
+
+export default Page;
