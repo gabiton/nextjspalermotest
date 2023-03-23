@@ -1,0 +1,269 @@
+.contact{
+    background: $blue;
+    padding-top: 103px;
+    padding-bottom: 247px;
+    position: relative;
+    overflow: hidden;
+    .bg{
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 2500px;
+        margin-left: -1250px;
+        svg{            
+            path{
+                stroke-dasharray: 5000px 5000px;
+                stroke-dashoffset: 5000px;
+                @include tre(6s);
+            }
+        }
+
+        @include responsive('mobile-h') {
+            display: none;
+        }
+    }
+    .bg-mobile {
+        display: none;
+        @include responsive('mobile-h') {
+            display: block;
+            width: 100%;
+            margin-left: 0;
+            left: 0;
+            height: 100%;
+
+            svg {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: auto; 
+            }
+        }
+    }
+    .container{
+        position: relative;
+    }
+    .pretitle{
+        font-weight: 600;
+        font-size: 19px;
+        line-height: 30px;
+        color: #fff;
+        text-transform: uppercase;
+        margin-bottom: 78px;
+        @include fade(0,100px);
+        @include tre(1s);
+    }
+    .title{
+        @include h1_large;
+        color: #fff;
+        margin-bottom: 47px;
+        @include fade(0,100px);
+        @include tre(1s);
+        @include trd(.2s);
+        span{
+            color: $pink;
+            margin-bottom: 60px;
+        }
+    }
+    .content{
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        @include fade(0,100px);
+        @include tre(1s);
+        @include trd(.4s);
+        .form {
+            width: 100%;
+            max-width: 948px;
+        }
+        p{
+            @include body_medium;
+            color: #fff;
+            max-width: 630px;
+        }
+        .gform_wrapper{
+            margin-top: 97px;
+            input, textarea, select{
+                background: none;
+                color: #fff;
+            }
+            .gform_footer{
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+            }
+            textarea{
+                height: 183px;
+                resize: vertical;
+                &::-webkit-resizer {                    
+                    display: none;
+                }
+            }
+            .ginput_container_textarea{
+                position: relative;
+                &:after{
+                    background: url(/images/textarea.svg) no-repeat;
+                    width: 17px;
+                    height: 17px;
+                    position: absolute;
+                    bottom: 15px;
+                    right: 10px;
+                    content: '';
+                    display: block;
+                    pointer-events: none
+                }
+            }
+            .gform_heading{
+                display: none;
+            }
+            ::placeholder{
+                color: transparent;
+            }
+            .gfield {
+                position: relative;
+                label{
+                    position: absolute;
+                    top: 0;
+                    font-size: 19px;
+                    color: #fff;
+                    left: 0;
+                    height: 52px;
+                    display: flex;
+                    align-items: center;
+                    pointer-events: none;
+                    font-weight: 300;
+                    @include tr(.3s);
+                    transform-origin: 0 50%;
+                    @include trd(0);
+
+                    @include responsive('mobile-h') {
+                        font-size: 14px;
+                        height: 42px;
+                    }
+                }
+                &.hasval{
+                    label{
+                        top: -30px;
+                        transform: scale(.7);
+                    }
+                }
+            }
+            select{
+                outline: none;
+                background: url(/images/select.svg) no-repeat right center;
+                option{
+                    background: $blue;
+                    color: #fff;
+                    border: none;
+                    outline: none;
+                }
+                &:focus{
+                    background-image: url(/images/select-open.svg);
+                }
+            }
+            .gform_validation_errors{
+                margin-bottom: 25px;
+            }
+            
+
+
+        }
+        .data{
+            max-width: 365px;
+            .data_title{
+                color: $lblue;
+                font-size: 23px;
+                line-height: 34px;
+                margin-bottom: 33px;
+            }
+            p{
+                color: #fff;
+                @include body_medium;
+                margin-bottom: 30px;
+                a{
+                    color: #fff;
+                    @include tr(.3s);
+                    text-decoration: none;
+                    &:hover{
+                        color: $pink;
+                    }
+                }
+            }
+        }
+    }
+    .gform_confirmation_message{
+        margin-top: 30px;
+        color: #fff;
+        background: $pink;
+        padding: 15px 20px;
+        font-size: 19px;
+        line-height: 30px;
+    }
+    @include responsive('tablet-v') {
+        .content {
+            flex-direction: column;
+            gap: 50px;
+        }
+    }
+    @include responsive('mobile-h') {
+        padding-top: 40px;
+        padding-bottom: 56px;
+        .pretitle{
+            font-size: 12px;
+            line-height: 20px;
+            margin-bottom: 46px;
+        }
+        .title{
+            font-size: 57px;
+            line-height: 62px;
+            margin-bottom: 13px;
+        }
+        .content{
+            flex-direction: column;
+            gap: 0;
+            p{
+                max-width: 293px;
+            }
+            .gform_wrapper{
+                margin-top: 48px;
+                padding-left: 0;
+                padding-right: 0;
+                form{
+                    gap: 0px;
+                }
+                .gform_footer{
+                    flex-direction: column;
+                    margin-bottom: 20px;
+                    input{
+                        margin-left: auto;
+                        height: 56px;
+                    }
+                }
+            }
+            .data{
+                margin-top: 26px;
+                .data_title{
+                    font-size: 15px;
+                    line-height: 22px;
+                    margin-bottom: 22px;
+                }
+                p{
+                    margin-bottom: 23px;
+                }
+            }
+        }
+    }
+    &.in,
+    .wp-admin &{
+        .bg{
+            svg{
+                path{
+                    stroke-dashoffset: 0;
+                }
+            }
+        }
+        .pretitle, .title, .content{
+            @include fadein();
+        }
+    }
+}

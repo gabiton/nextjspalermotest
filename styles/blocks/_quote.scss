@@ -1,0 +1,140 @@
+.quote{
+    background: $pink;
+    padding-top: 390px;
+    padding-bottom: 250px;
+    position: relative;
+    overflow: hidden;
+    /*
+    &:before{
+        @include absolute;
+        content: '';
+        background: url(/images/quote.svg) no-repeat;
+        background-position: bottom;
+        display: block;
+        background-size: 2500px auto;
+    }
+    */
+    .bg{
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        margin-left: -1250px;
+        width: 2500px;
+        svg{
+            path{
+                stroke-dasharray: 4000px 4000px;
+                stroke-dashoffset: 4000px;
+                @include tr(3s);
+            }
+        }
+    }
+    blockquote{
+        max-width: 837px;
+        margin: 0 auto;
+        padding-left: 48px;
+        p{
+            @include h2_large;
+            color: #fff;
+            position: relative;
+            margin-bottom: 45px;
+            @include fade(0,100px);
+            @include tre(1s);
+            &:before{
+                content: '“';
+                position: absolute;
+                top: -10px;
+                left: -90px;
+                color: $blue;
+                font-weight: 500;
+                font-size: 135px;
+                line-height: 140px;
+            }
+            &:after{
+                content: '”';
+                
+                position: absolute;
+                bottom: -25px;
+                right: -0px;                
+                color: $blue;
+                font-weight: 500;
+                font-size: 135px;
+                /*
+                line-height: .1;
+                transform: translateY(55px);
+                margin-left: 10px;
+                display: inline-block;
+                */
+            }
+        }
+        cite{
+            @include body_medium;
+            font-weight: 600;            
+            color: #fff;
+            font-style: normal;
+            display: block;
+            @include fade(0,100px);
+            @include tre(1s);
+            @include trd(.2s);
+        }
+    }
+    @include responsive('tablet-h') {
+        .quote_in{
+            padding-left: 70px;
+            padding-right: 70px;
+        }
+    }
+    @include responsive('mobile-h') {
+        padding: 66px 0 132px;
+        &:before{
+            background-size: 768px auto;
+            background-position: bottom left;
+        }
+        .quote_in{
+            padding-left: 30px;
+            blockquote{
+                p{
+                    margin-bottom: 26px;
+                    &:before{
+                        font-size: 57px;
+                        line-height: 62px;
+                        left: -48px;
+                        top: -3px;
+                    }
+                    &:after{
+                        font-size: 57px;
+                        line-height: 62px;
+                        position: relative;
+                        display: inline-block;
+                        line-height: 0.1;
+                        margin: -3px 0 10px;
+                    }
+                }
+            }
+        }
+    }
+    .wp-admin &{
+        padding-top: 150px;
+        padding-bottom: 150px;
+    }
+    .wp-admin &,
+    &.in{
+        .bg{
+            svg{
+                path{
+                    stroke-dashoffset: 0;
+                }
+            }
+        }
+        blockquote{
+            p, cite{
+                @include fadein();
+            }
+        }
+    }
+}
+.diversity+.quote{
+    margin-top: -120px;
+    @include responsive('mobile-h') {
+        margin-top: 0;
+    }
+}

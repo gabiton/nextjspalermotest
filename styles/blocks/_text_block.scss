@@ -1,0 +1,8 @@
+.text_block {
+    @include margin();
+
+    &__cont {
+        @include text-block();
+        width: 100%;
+    }
+}

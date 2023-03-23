@@ -1,0 +1,211 @@
+.mobilemenu{
+    display: none;
+}
+.menuopen{
+    overflow: hidden;
+}
+@include responsive('tablet-h') {
+    .mobilemenu{
+        display: block;
+        position: absolute;
+        top: 30px;
+        right: 28px;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        gap: 8px;
+        flex-direction: column;
+        padding: 4px 4px 0;
+        background: none;
+        border: none;
+        z-index: 10;
+        span{
+            height: 2px;
+            background: #fff;
+            display: block;
+            width: 100%;
+            transition: .3s;
+        }
+        .whiteheader &{
+            span{
+                background: $dblue;
+            }            
+        }
+        .menuopen &{
+            span{
+                background: #fff;
+            }
+            span:nth-child(1){
+                transform: translateY(13px) rotate(45deg);
+            }
+            span:nth-child(2){
+                transform: translateY(3px) rotate(-45deg);
+            }
+            span:nth-child(3){
+                transform: scaleX(0);
+            }
+        }
+        
+        
+    }
+    .siteheader{
+        .siteheader-cont{
+            height: 88px;
+        }
+        .menuopen &{            
+            position: fixed;            
+        }
+        
+        .scroll &{
+            .siteheader-cont{
+                height: 88px;
+            }
+        }
+        .logo{
+            width: 159px;
+            height: 24px;
+            background-size: 100% auto;
+            top: 32px;
+            z-index: 10;
+            left: 30px;
+            .menuopen &{
+                svg{
+                    path, .text path{
+                        fill: #fff;
+                    }
+                }
+            }
+        }
+        nav{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: $pink;
+            padding-top: 159px;
+            padding-left: 76px;
+            transform: translateX(-100%);
+            transition: .3s;
+            overflow-y: auto ;
+            overflow-x: hidden;
+            ul{
+                flex-direction: column;
+                padding-bottom: 20px;
+                li{
+                    position: static;
+                    border-top: 1px solid $blue;
+                    &.menu-item-has-children{
+                        padding-bottom: 0;
+                        >a{
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            &:after{
+                                background: url(/images/ico-dd-mobile.svg) no-repeat;
+                                width: 12px;
+                                height: 20px;
+                                margin-top: 5px;
+                            }
+                        }
+                        &.open{
+                            ul.sub-menu{
+                                transform: translateX(0);
+                            }
+                        }
+                    }
+                    ul.sub-menu {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100vw;
+                        height: 100vh;
+                        opacity: 1;
+                        visibility: visible;
+                        background: $lblue;
+                        padding-top: 197px;
+                        padding-left: 76px;
+                        transform: none;
+                        transform: translateX(100%);
+                        pointer-events: all;
+                        .items{
+                            height: 100%;
+                            overflow-y: auto;
+                            margin-bottom: 0;
+                        }
+                        ul{
+                            position: relative;
+                            transform: none;
+                            opacity: 1;
+                            visibility: visible;
+                            position: relative;
+                            top: unset;
+                            pointer-events: all;
+                            background: none;
+                            min-width: unset;
+                        }
+                        &:before{
+                            height: 178px;
+                            background: $lblue;
+                            left: 0;
+                            width: 100%;
+                            content: '';
+                            top: 0;
+                            display: block;
+                            position: absolute;
+                            z-index: 1;
+                        }
+                        li.title{
+                            color: #fff;
+                            font-size: 31px;
+                            line-height: 46px;
+                            border-bottom: 1px solid $blue;
+                            padding-bottom: 16px;
+                            margin-bottom: 38px;
+                            display: block;
+                            position: absolute;
+                            top: 115px;
+                            left: 76px;
+                            right: 20px;
+                            z-index: 2;
+                            .back{
+                                width: 30px;
+                                height: 30px;
+                                position: absolute;
+                                top: 10px;
+                                right: 100%;
+                                margin-right: 20px;
+                                background: url(/images/ico-arrow-white.svg) no-repeat center;
+                                transform: scaleX(-1);
+                                background-size: 24px auto;
+                            }
+                        }
+                        li{
+                            border-top: none;
+                            margin-bottom: 13px;
+                            a{
+                                font-size: 19px;
+                                padding: 0 20px 10px 0 !important;
+                                line-height: 1.6;
+                                white-space: normal;
+                            }
+                        }
+
+                    }
+                    a{
+                        font-size: 31px;
+                        line-height: 46px;
+                        padding: 19px 40px 20px 0 !important;
+                        color: #fff !important;
+                    }
+                }
+                
+            }
+            .menuopen &{
+                transform: translateX(0);
+            }
+        }
+        
+    }
+
+} 

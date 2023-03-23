@@ -1,0 +1,47 @@
+.twocolumns{
+    padding-top: 151px;
+    padding-bottom: 141px;
+    .container{
+        display: flex;
+        gap: 30px;
+        justify-content: space-between;
+    }
+    .col_left, .col_right{
+        width: 100%;
+        max-width: 680px;                 
+        @include fade(0, 100px);
+        @include tre(1s);
+        @include trd(.2s);
+    }
+    h2{
+        @include h2_large;
+        color: $pink;
+        margin-bottom: 30px;
+    }
+    p{
+        @include body_medium;
+        margin-bottom: 30px;
+    }
+    ul{
+        @include slash_list;
+    }
+    @include responsive('mobile-h') {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        .container{
+            flex-direction: column;
+        }
+        h2{
+            margin-bottom: 20px;
+        }
+        
+    }
+
+    &.in {
+        .container{
+            .col_right, .col_left{
+                @include fadein();
+            }
+        }
+    }
+}

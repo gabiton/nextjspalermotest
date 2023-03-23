@@ -1,0 +1,71 @@
+.perspective{
+    background: $pink;
+    position: relative;
+    padding-top: 136px;
+    min-height: 935px;
+    color: #fff;
+    .single-vehicles &{
+        min-height: 798px;
+    }
+    .bg{
+        @include absolute;
+        opacity: .8;
+        img{
+            @include absolute;
+            object-fit: cover;
+        }
+    }
+    .container{
+        display: flex;
+        gap: 50px;
+        position: relative;
+    }
+    .left_col{
+        width: 100%;
+        max-width: 450px;
+    }
+    .right_col{
+        width: 100%;
+        max-width: 896px;
+        padding-top: 20px;
+        p{
+            @include body_large;
+            margin-bottom: 27px;
+        }
+    }
+    .title{  
+        font-weight: 600;
+        font-size: 19px;
+        line-height: 30px;
+        border-bottom: 1px solid #fff;
+        padding-bottom: 26px;
+        text-transform: uppercase;
+        
+    }
+    @include responsive('tablet-v') {
+        .container{
+            flex-direction: column;
+            gap: 36px;
+        }
+        .left_col{
+            max-width: unset;
+        }
+        .right_col{
+            max-width: unset;
+        }
+    }
+    @include responsive('mobile-h') {
+        padding-top: 68px;
+        min-height: auto !important;
+        padding-bottom: 60px;
+        .title{
+            font-size: 12px;
+            line-height: 20px;
+            padding-bottom: 15px;
+        }
+        
+        .right_col{
+            padding-top: 0;
+        }
+    }
+}

@@ -1,0 +1,162 @@
+@mixin margin() {
+  margin-top: 130px;
+
+  @include responsive('tablet-h') {
+    margin-top: 70px;
+  }
+}
+
+@mixin site__uppertitle {
+  @include h5();
+  text-transform: uppercase;
+  color: $primary-color;
+  text-align: center;
+}
+
+@mixin site__title() {
+  @include h2();
+  color: $primary-color;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 0 20px;
+}
+
+.site__title {@include site__title();}
+
+@mixin site__text() {
+  @include h5();
+  color: $primary-color;
+  text-align: center;
+  margin: 0 auto;
+  width: 700px;
+  max-width: 100%;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  padding: 0 20px;
+}
+
+.site__text {@include site__text();}
+
+
+/* Text Block Custom Style */
+
+@mixin text_block() {
+	h1,h2,h3,h4,h5,h6 {
+		color: $primary-color;
+    margin-bottom: 20px 
+	}
+
+	h1 {
+		@include h1();
+	}
+	h2 {
+		@include h2();
+	}
+	h3 {
+		@include h3();
+	}
+	h4 {
+		@include h4();
+	}
+	h5 {
+		@include h5();
+	}
+	h6 {
+		@include h6();
+	}
+	p {
+    @include h5();
+		line-height: 1.4;
+		margin-bottom: 28px;
+	}
+	ul, ol {
+		padding-left: 15px;
+		margin-bottom: 28px;
+		line-height: 1.6;
+	}
+	ul {
+		li {
+			list-style: disc;
+		}
+	}
+	a {
+		color: $primary-color;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+  blockquote {
+    padding-left: 30px;
+    border-left: 3px solid $primary-color;
+
+    p {
+      @include h4();
+    }
+  }
+
+  img {
+    width: auto;
+    height: auto;
+    margin: 0 0 28px 0;
+  }
+
+  .alignleft {
+    float: left;
+    margin-right: 30px;
+  }
+
+  .aligncenter {
+    margin: 30px auto;
+    display: block;
+  }
+
+  .alignright {
+    float: right;
+    margin-left: 30px;
+  }
+}
+
+@mixin inputs() {
+  height: 40px;
+  line-height: 40px;
+  background: none;
+  padding: 0 25px;
+  @include h6();
+  color: $primary-color;
+
+  &::placeholder {
+    color: #BBBFC1;
+  }
+}
+
+
+
+@mixin tr($d: 0.5s, $e: all) {
+  transition: $e $d ease-out;
+}
+
+@mixin tre($d: 0.5s, $e: all) {
+  transition: $e $d cubic-bezier(0.165, 0.840, 0.440, 1.000);
+  
+  @supports (-webkit-backdrop-filter: blur(1px)) {
+    transition: $e $d ease-out;
+  }
+  
+}
+
+@mixin trd($d: 0.5s) {
+  transition-delay: $d;
+}
+
+@mixin fade($x: 0px, $y: 0px) {
+  opacity: 0.01;
+  transform: translateX($x) translateY($y);
+}
+
+@mixin fadein() {
+  opacity: 1;
+  transform: translateX(0px) translateY(0px);
+}

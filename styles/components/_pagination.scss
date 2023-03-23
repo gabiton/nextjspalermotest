@@ -1,0 +1,36 @@
+.pagination{
+    margin-bottom: 100px;
+    display: flex;
+    border-top: 1px solid $grey;
+    padding-top: 50px;
+    justify-content: center;
+    gap: 10px;
+    .page-numbers{
+        font-family: $font-secondary;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+        text-transform: uppercase;
+        color: $blue;
+        padding: 5px 10px;
+        @include tr(.3s);
+        &:hover{
+            color: $pink;
+        }
+        &.current{
+            color: #fff;
+            background: $pink;
+        }
+
+        @include responsive('mobile-v') {
+            max-width: 69px;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+    }   
+
+    @include responsive('mobile-h'){
+        margin-bottom: 50px;
+
+    }
+}

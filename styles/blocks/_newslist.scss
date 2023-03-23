@@ -1,0 +1,117 @@
+.newslist{
+    margin-bottom: 50px;
+    .filters{
+        display: flex;
+        margin-bottom: 53px;
+
+        @include responsive('mobile-h') {
+            flex-wrap: wrap;
+        }
+        button{
+            background: #fff;
+            padding: 18px 49px 14px;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 19px;
+            line-height: 30px;
+            color: $pink;
+            cursor: pointer;
+            @include tr(.3s);
+            &:hover{
+                background: #f1f1f1;
+            }
+            &.active{
+                background: $pink;
+                color: #fff;
+            }            
+        }
+    }
+    .list{ 
+        @include tr(.3s);
+        &.loading{
+            opacity: 0;
+        }
+        .i{
+            border-top: 1px solid #C7C7C7;
+            padding-top: 59px;
+            padding-bottom: 50px;
+            display: flex;
+            gap: 30px;
+            @include tr(1s);
+            @include fadein();
+            &.fade{
+                @include fade(0,0px);
+            }
+
+        }
+        .date{
+            @include body_medium;
+            width: 100%;
+            max-width: 342px;
+        }
+        .t{
+            width: 100%;
+        }
+        .cat{
+            font-weight: 600;
+            font-size: 19px;
+            line-height: 30px;
+            color: $pink;        
+            text-transform: uppercase    
+        }
+        .title{
+            @include h2_medium;   
+            max-width: 900px;         
+            margin-top: 30px;
+            a{
+                color: #000;
+                @include tr(.3s);
+                &:hover{
+                    color: $pink;
+                    text-decoration: underline;
+                }
+            }            
+        }
+    }
+    @include responsive('tablet-h') {
+        .filters{
+            button{
+                padding-left: 40px;
+                padding-right: 40px;
+            }
+        }
+        .list {
+            .date{
+                max-width: 250px;
+            }
+        }
+    }
+    @include responsive('mobile-h') {
+        margin-bottom: 20px;
+        .filters{
+            margin-bottom: 31px;
+            button{
+                font-size: 12px;
+                line-height: 20px;
+                padding: 11px 13px;
+                white-space: nowrap;
+            }
+        }
+        .list{
+            .i{
+                flex-direction: column;
+                gap: 0;
+                padding-top: 30px;
+                padding-bottom: 38px;
+            }
+            .date{
+                margin-bottom: 20px;
+            }
+            .cat{
+                font-size: 14px;
+                line-height: 22px;
+                margin-bottom: 15px;
+            }
+        }
+    }
+}

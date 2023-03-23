@@ -1,0 +1,71 @@
+.vehicle_overview{
+    padding-top: 120px;
+    .content{
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+
+        @include responsive('tablet-v') {
+            flex-direction: column;
+        }
+    }
+    .sectiontitle{
+        margin-bottom: 84px;
+
+        @include responsive('tablet-v') {
+            margin-bottom: 42px;
+        }
+    }
+    .text{
+        width: 100%;
+        max-width: 715px;
+        @include tre(1s);
+        @include trd(.2s);
+        @include fade(0,100px);
+
+        a {
+            cursor: pointer;
+            &:hover {
+                color: $pink;
+            }
+        }
+    }
+    .panel{
+        width: 100%;
+        max-width: 515px;
+        background: $lblue;
+        color: #fff;
+        padding: 73px 75px 58px;
+        @include tre(1s);
+        @include trd(.4s);
+        @include fade(0,100px);
+
+        @include responsive('tablet-v') {
+            max-width: 100%;
+        }
+
+        @include responsive('mobile-h') {
+            padding: 40px 40px 20px 40px;
+        }
+
+        .title{
+            @include h3_large;
+            border-bottom: 1px solid $grey;
+            padding-bottom: 34px;
+            margin-bottom: 30px;
+        }
+        p{
+            font-weight: 600;   
+        }
+    }
+    p{
+        @include body_medium;
+        margin-bottom: 18px;
+    }
+    &.in, 
+    .wp-admin &{
+        .text, .panel{
+            @include fadein();
+        }
+    }
+}

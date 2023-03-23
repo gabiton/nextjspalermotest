@@ -1,0 +1,169 @@
+.ourvision{
+    padding-top: 100px;
+    position: relative;
+    overflow: hidden;
+    
+    .bg{
+        position: absolute;
+        top: 0;
+        left: 50%;
+        right: 0;
+        height: 100%;
+        margin-left: -710px;
+        background: $lblue;
+        @include fade(0, 0);
+        @include tre(1s);
+
+        img{
+            @include absolute;
+            object-fit: cover;
+        }        
+
+        @include responsive('tablet-v') {
+            display: none;
+            left: 0;
+            margin-left: 0;
+            width: 100%;
+        }
+
+        &.image-mobile {
+            display: none;
+
+            @include responsive('tablet-v') {
+                display: block;
+
+                img {
+                    display: block;
+                    object-position: top center;
+                }
+            }
+        }
+    }
+    .container{
+        position: relative;
+        padding-left: $coloffset;
+        padding-right: $coloffset;
+    }
+    .sectiontitle{
+        border-bottom: 1px solid $blue;
+        padding-bottom: 70px;
+        color: #fff;
+        margin-bottom: 0;
+    }
+    .text{
+        margin-left: 510px;
+        background: $blue;
+        padding: 113px  0 156px 123px;
+        position: relative;
+        max-width: 760px;          
+        @include fade(0, 100px);
+        @include tre(1s);
+        @include trd(.5s);
+
+        &:after{
+            width: 1000px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            background: $blue;
+            content: '';
+            display: block;
+        }
+        .title{
+            @include h2_large;
+            color: $lblue;
+            margin-bottom: 35px;
+        }
+        p{
+            @include body_medium;
+            color: #fff;
+            max-width: 635px;
+        }
+    }
+    &.alt{
+        .bg{
+            background: $gold;
+        }
+        .sectiontitle{
+            color: #fff;
+        }
+        .text{
+            .title{
+                color: $gold;
+            }
+        }
+    }
+    @include responsive('desktop-s') {
+        .text{
+            margin-left: 50%;
+        }
+    }
+    @include responsive('tablet-h') {
+        .text{
+            margin-left: 40%;
+            padding: 100px 0 100px 80px;
+            .title{
+                
+            }
+        }
+    }
+    @include responsive('tablet-v') {
+        padding-bottom: 60px;
+        .text{
+            margin-left: 0;
+            background: none;
+            padding: 71px 0 0;
+            &:after{
+                display: none;
+            }
+            .title{
+                color: #fff !important;
+                margin-bottom: 75px;
+            }
+            .t{
+                background: $blue;
+                padding: 34px 35px 34px 35px;
+                position: relative;
+                &:after{
+                    content: '';
+                    position: absolute;
+                    height: 100%;
+                    width: 100px;
+                    left: 100%;
+                    background: $blue;
+                    top: 0;
+                }
+            }
+        }
+    }
+    @include responsive('mobile-h') {
+        padding-top: 47px;
+        padding-bottom: 30px;
+        .container{
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        .sectiontitle{
+            padding-bottom: 36px;
+        }
+        
+    }
+    .wp-admin &{
+        .text{
+            margin-left: 40%;
+            padding: 100px 0 100px 80px;
+        }
+    }
+
+    &.in {
+        .bg{
+            @include fadein();
+        }
+        .container{
+            .text{
+                @include fadein();
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+<svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 768 635" style="enable-background:new 0 0 768 635;" xml:space="preserve">
+<style type="text/css">
+	.cls_hero-1{fill:#CE9472;}
+	.st1{fill:none;}
+	.cls_hero-2{fill:none;stroke:#003356;stroke-width:0.75;stroke-miterlimit:10;}
+</style>
+<polygon class="cls_hero-1" points="118.3,558.4 898,558.4 898,698.9 -118,698.9 -118,-38.1 716,-38.1 "/>
+<g>
+	<rect x="189" y="88" class="st1" width="390" height="555"/>
+</g>
+<path class="cls_hero-2" d="M-464.4,558.4H799.1"/>
+<path class="cls_hero-2" d="M780,607.4H131.6c-21.7,0-42.5-8.6-57.8-23.9l-25-25l-25,25C8.5,598.8-12.3,607.4-34,607.4h-180.2"/>
+<path class="cls_hero-2" d="M710.5-33.8l-918.4,918.4"/>
+<path class="cls_hero-2" d="M48.9,558.5l661.6-661.6"/>
+</svg>

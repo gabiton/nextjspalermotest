@@ -1,0 +1,214 @@
+
+.siteheader{
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%; 
+  
+  //background: $blue;
+  z-index: 100;
+  transition: .3s;
+  .container{
+    position: relative;
+    height: 100%;
+  }
+  .siteheader-cont{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 109px;
+    transition: .3s;
+  }
+
+  .scroll &{
+        
+    .siteheader-cont{
+      height: 109px;
+      background: $blue;
+    }
+    
+    .logo {
+      @include responsiveMin('tablet-h') {
+        top: 50px;      
+      }
+    }
+    nav{
+      @include responsiveMin('tablet-h') {
+        top: 22px;
+      }
+      ul{
+        a{
+          padding-bottom: 20px;
+        }
+        li.menu-item-has-children{
+          padding-bottom: 1px;
+        }
+      }
+    }
+  }
+
+  .logo{
+    position: absolute;
+    left: 30px;
+    top: 66px;
+    width: 160px;
+    height: 24px;    
+    display: block;
+    svg{
+      width: 100%;
+      height: 100%;
+      path{
+        transition: .3s;
+      }
+    }
+  }
+  nav{
+    position: absolute;
+    right: 0px;
+    top: 42px;
+    transition: .3s;
+    ul{
+      display: flex;
+      gap: 0px;
+      a{
+        display: block;
+        font-family: $font-secondary;
+        font-size: 16px;
+        line-height: 46px;
+        font-weight: 500;
+        color: #fff;
+        padding: 20px 30px 20px 29px;
+        transition: .3s;
+        &:hover{
+          color: $pink;
+        }
+      }
+      li.active{
+        >a{
+          color: $pink;
+        }
+      }
+      li{
+        position: relative;
+        &.current-menu-item, &.current_page_ancestor{
+          >a{
+            color: $pink;
+          }
+        }
+        &.menu-item-has-children{
+          padding-bottom: 25px;
+          >a{
+            &:after{
+              width: 13px;
+              height: 7px;
+              background: url(/images/ico-dd.svg) no-repeat;
+              content: '';
+              display: inline-block;
+              margin-left: 19px;
+              vertical-align: top;
+              margin-top: 19px;
+              transition: .3s;
+            }
+          }
+        }
+
+        ul.sub-menu{
+          position: absolute;
+          flex-direction: column;
+          background: #fff;
+          left: 0;
+          top: 100%;
+          padding: 37px 0 25px;
+          padding: 25px 0;
+          visibility: hidden;
+          pointer-events: none;
+          opacity: 0;
+          transition: .3s;
+          transform: translateY(20px);
+          min-width: 338px;
+          ul{
+            display: block;
+          }
+          
+          li.title{
+            display: none;
+          }
+          a{
+            white-space: nowrap;
+            color: $blue;
+            padding: 0px 28px;
+            @include tr(.3s);
+            &:hover{
+              color: $pink;
+            }
+          }
+        }
+        @include responsiveMin('tablet-h'){
+          &:last-child{
+            ul.sub-menu{
+              left: unset;
+              right: 0;
+            }
+          }
+          &:hover{
+            >a{
+              color: $pink;
+              &:after{
+                transform: rotate(180deg);
+              }
+            }
+            ul.sub-menu{
+              visibility: visible;
+              opacity: 1;
+              pointer-events: all;
+              transform: translateY(0px);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .whiteheader &{    
+    .siteheader-cont{
+      background: #fff;
+      height: 155px;
+      position: relative;
+    }
+    .logo{
+      //background-image: url(/images/logo_alt.svg);
+      .text{
+        path{
+          fill: $blue;
+        }
+      }
+    }
+    nav{
+      ul{
+        a{
+          color: $blue;
+        }
+      }
+    }
+  }
+  .whiteheader.scroll &{
+    .siteheader-cont{
+      height: 109px;
+    }
+    
+  }
+
+  @include responsive('tablet-h') {
+    .whiteheader & {
+      .siteheader-cont{
+        height: 88px;
+      }
+    }
+    .whiteheader.scroll &{
+      .siteheader-cont{
+        height: 88px;
+      }
+    }
+  }
+}

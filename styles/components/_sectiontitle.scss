@@ -1,0 +1,23 @@
+.sectiontitle {
+    width: 100%;
+    border-bottom: 1px solid #C7C7C7;
+    font-weight: 600;
+    font-size: 19px;
+    line-height: 30px;
+    text-transform: uppercase;
+    padding-bottom: 25px;
+    color: $pink;
+    margin-bottom: 70px;
+    @include responsive('mobile-h') {
+        font-size: 12px;
+        line-height: 20px;
+        padding-bottom: 15px;
+        margin-bottom: 30px;
+    }
+
+    @include tre(1s);
+    @include fade(0,100px);
+    .in &{
+        @include fadein();
+    }
+}

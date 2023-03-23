@@ -1,0 +1,129 @@
+.cta{
+    position: relative;
+    background: #6497B9;
+    min-height: 540px;
+    padding-top: 78px;
+    overflow: hidden;
+    .bg{
+        @include absolute;
+        .img{
+            position: absolute;
+            top: 0;
+            right: 50%;
+            left: 0;
+            bottom: 135px;
+            margin-right: -40px;
+            
+            mix-blend-mode: multiply;
+            img{
+                @include absolute;
+                object-fit: cover;
+                opacity: 0;
+                @include tr(1s);
+            }
+        }
+        .after{
+            @include absolute;
+            svg{
+                position: absolute;
+                width: 2500px;
+                top: 0;
+                left: 50%;
+                margin-left: -1250px;
+                .cta_st1{
+                    @include tre(3s);
+                    stroke-dasharray: 2500px 2500px;
+                    stroke-dashoffset: 2500px;
+                }
+            }
+        }
+    }
+    .container{
+        position: relative;
+        justify-content: flex-end;
+        display: flex;
+        .text{
+            max-width: 382px;
+            width: 100%;
+            margin-right: 60px;
+        }
+        .title{
+            @include h2_large;
+            margin-bottom: 25px;
+            color: #fff;
+            @include fade(0,200px);
+            @include tre(1s);
+        }
+        .t{
+            @include fade(0, 200px);
+            @include tre(1s);
+            @include trd(.2s);
+        }
+        p{
+            @include body_medium;
+            color: #fff;
+            margin-bottom: 40px;
+        }
+    }   
+    &.in{
+        .container{
+            .title, .t{
+                @include fadein();
+            }
+        }
+        .bg{
+            .img{
+                img{
+                    opacity: .6;
+                }
+            }
+            .after{
+                svg{
+                    .cta_st1{
+                        stroke-dashoffset: 0px;
+                    }
+                }
+            }
+        }
+    }
+    @include responsive('mobile-h') {
+        padding-top: 48px;
+        padding-bottom: 48px;
+        min-height: 318px;
+        .bg{
+            .after{
+                display: none;
+            }
+            &:after{
+                @include absolute;
+                content: '';
+                background-position: center;
+                background-image: url(/images/cta-mobile.svg);
+                background-size: 768px auto;
+            }
+            .img{
+                bottom: 51px;
+                margin-right: -13px;
+                img{
+                    object-position: right;
+                }
+            }
+        }
+        .container{
+            .text{
+                margin-right: 0;
+                margin-left: 90px;
+                .title{
+                    font-size: 24px;
+                    line-height: 32px;
+                    margin-bottom: 12px;
+                }
+                p{
+                    font-size: 14px;
+                    line-height: 22px;
+                    margin-bottom: 17px;
+                }
+            }
+        }
+    }
+}

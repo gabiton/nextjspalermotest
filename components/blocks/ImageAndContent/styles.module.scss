@@ -1,0 +1,38 @@
+@import "styles/blockmain";
+
+.BlockImageAndContent{
+    padding: 100px 0;
+    background: #eee;
+    .container{
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        align-items: center;
+    }
+    .text{
+        flex: 400;
+        .title{
+            margin-bottom: 20px;
+            font-size: rv(32px, 48px);
+        } 
+    }
+    .image{
+        flex: 600;
+    }
+
+    &.imageRight{
+        .container{
+            flex-direction: row-reverse;
+        }
+    }
+    @include responsive('mobile-h'){
+        .container{
+            flex-direction: column;
+        }
+        &.imageRight{
+            .container{
+                flex-direction: column;
+            }
+        }
+    }
+}

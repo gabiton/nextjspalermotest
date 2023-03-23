@@ -1,0 +1,129 @@
+.pagehero_alt{
+    padding-top: 107px;
+    padding-bottom: 140px;
+    background: #C7C7C7 ;
+    background-size: 2500px auto;
+    min-height: 688px;
+    position: relative;
+    overflow: hidden;
+
+    .bg{
+        position: absolute;
+        width: 2500px;
+        left: 50%;
+        margin-left: -1250px;
+        height: 100%;
+        top: 0;
+        svg{
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            path{
+                stroke-dasharray: 3000px 3000px;
+                stroke-dashoffset: 3000px;
+                @include tre(6s);
+            }
+        }
+    }
+    
+    .h4{
+        @include h4;
+        color: $blue;
+        margin-bottom: 83px;
+        text-transform: uppercase;
+        @include fade(0,100px);
+        @include tre(1s);
+
+        a{
+            color: $blue;
+            @include tr(.3s);
+            &:hover{
+                color: $pink;
+            }
+        }
+
+        span {
+            padding: 0 8px;
+        }
+    }
+    .title{
+        @include h1_large;
+        color: $blue;
+        margin-bottom: 15px;   
+        @include fade(0, 100px);
+        @include tre(1s);
+        @include trd(.2s);
+        span{
+            color: $pink;
+        }
+    }
+    .h2{
+        @include h2_medium;
+        color: $pink;
+        margin-bottom: 38px;           
+        @include fade(0, 100px);
+        @include tre(1s);
+        @include trd(.2s);
+    }
+    p{
+        @include body_medium;
+        max-width: 840px;   
+        @include fade(0, 100px);
+        @include tre(1s);
+        @include trd(.4s);      
+    }
+    .title+p{
+        margin-top: 31px;
+    }
+    @include responsive('mobile-h'){
+        padding-top: 53px;
+        padding-bottom: 59px;
+        min-height: unset;
+        .bg{
+            height: 100%;
+            width: 2000px;
+            margin-left: -1120px;
+            svg{
+                height: 100%;
+            }
+        }
+        .title{
+            margin-bottom: 13px;
+        }
+        .h2{
+            margin-bottom: 20px;
+        }
+        .h4{
+            font-size: 12px;
+            line-height: 20px;
+            margin-bottom: 40px;
+            span{
+                display: block;
+                width: 14px;
+                height: 1px;
+                background: $blue;
+                font-size: 0;
+                margin: 11px 0;
+            }
+        }
+        p{
+            max-width: 300px;      
+        }
+    }
+
+    &.in,
+    .wp-admin & {
+        .container{
+            .h4, .title, .h2, p{
+                @include fadein();
+            }
+        }
+        .bg{
+            svg{
+                path{
+                    stroke-dashoffset: 0px;
+                }
+            }
+        }
+    }
+}

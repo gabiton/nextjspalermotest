@@ -1,0 +1,19 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 2500 965" style="enable-background:new 0 0 2500 965;" xml:space="preserve">
+<style type="text/css">
+	.hero_st0{fill:none;}
+	.hero_st1{fill:#003356;fill-opacity:0.8;}
+	.hero_st2{fill:none;stroke:#F5F5F5;stroke-width:0.75;stroke-miterlimit:10;stroke-opacity:0.3;}
+</style>
+<rect x="404" y="0" class="hero_st0" width="1748" height="965"/>
+<path class="hero_st1" d="M778.7,799.5L1577.2,1H-11v798.5h789.6l-49,49c-30.1,30.1-70.8,47-113.3,47H-11V965h2538V799.5H778.7z"/>
+<path class="hero_st2" d="M-157.2-135.3L779,799"/>
+<path class="hero_st2" d="M263,799h664"/>
+<path class="hero_st2" d="M808,965L-62.4,94.6"/>
+<path class="hero_st2" d="M2521,895H941c-42.5,0-83.3-16.9-113.3-47l-49-49l-49,49c-30.1,30.1-70.8,47-113.3,47H263"/>
+<path class="hero_st2" d="M1740-23L751.5,965.5"/>
+<path class="hero_st2" d="M731,965.5V1"/>
+<path class="hero_st2" d="M914,799h1222"/>
+<path class="hero_st2" d="M827,1v965"/>
+<path class="hero_st2" d="M778.5,799.5L1660-82"/>
+</svg>

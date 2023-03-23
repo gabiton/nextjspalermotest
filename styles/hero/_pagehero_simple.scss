@@ -1,0 +1,71 @@
+.pagehero_simple{
+    padding-bottom: 77px;
+    .container{
+        &:before{
+            width: 100%;
+            height: 1px;
+            content: '';
+            display: block;
+            background: #C7C7C7;
+            margin-bottom: 100px;
+        }
+    }
+    .pretitle{
+        font-weight: 700;
+        font-size: 19px;
+        line-height: 30px;
+        color: $blue;
+        margin-bottom: 43px;
+        text-transform: uppercase;
+
+        a {
+            &:hover {
+                color: $pink;
+            }
+        }
+
+        span {
+            padding: 0 8px;
+        }
+    }
+    .title{
+        color: $pink;
+        @include h1_medium;
+        margin-bottom: 9px;
+        .archive &{
+            font-size: 32px;
+            line-height: 1;
+            span{
+                display: block;
+                @include h1_medium;
+            }
+        }
+    }
+    p{
+        @include body_medium;
+        max-width: 900px;
+    }
+    @include responsive('mobile-h'){
+        padding-bottom: 61px;
+        .container{
+            &:before{
+                margin-bottom: 43px;
+            }
+        }
+        .pretitle{
+            font-size: 12px;
+            margin-bottom: 34px;
+            span{
+                width: 14px;
+                height: 1px;
+                display: block;
+                font-size: 0;
+                margin: 7px 0;   
+                background: $dblue;
+            }
+        }
+        .title{
+            margin-bottom: 16px;
+        }
+    }
+}

@@ -1,0 +1,120 @@
+.missions{
+    padding-top: 118px;
+    padding-bottom: 133px;
+    
+    .missions_grid{
+        margin-top: 94px;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 47px;
+        .i{
+            border-left: 1px solid #C7C7C7;
+            padding-left: 47px;
+            @include fade(0,100px);
+            @include tre(1s);
+            &:nth-child(1){ @include trd(.2s) }
+            &:nth-child(2){ @include trd(.4s) }
+            &:nth-child(3){ @include trd(.6s) }
+            .title{
+                color: $pink;
+                @include h2_large;
+                margin-bottom: 8px;
+            }
+            p{
+                @include body_medium;
+            }
+        }
+    }
+    
+    .capabilities{
+        margin-top: 130px;
+        &:first-child{
+            margin-top: -16px;
+        }
+        ul{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            @include body_medium;
+            grid-gap: 14px 30px;  
+            margin-left: 20px;
+            margin-top: 30px;
+            @include fade(0, 100px);
+            @include tre(1s);
+            @include trd(1s);
+            li{
+                position: relative;
+                &:before{
+                    left: -20px;
+                    top: 0;
+                    content: '–';
+                    color: $pink;
+                    position: absolute;
+                }
+            }
+        }
+    }
+    &.in{
+        .missions_grid{
+            .i{
+                @include fadein();
+            }
+        }
+        .capabilities{
+            ul{
+                @include fadein();
+            }
+        }
+    }
+    @include responsive('tablet-v') {
+        .missions_grid{
+            margin-top: 35px;
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            .i{
+                border-left: 0;
+                padding-left: 0;
+            }
+        }
+    }
+    @include responsive('mobile-h') {
+        padding-top: 42px;
+        padding-bottom: 65px;
+        .sectiontitle{
+            
+        }
+        .missions_grid{
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 26px;
+
+            .i{
+                border-left: 0;
+                padding-left: 0;
+                .title{
+                    font-size: 24px;
+                    line-height: 32px;
+                }
+                p{
+                    font-size: 14px;
+                    line-height: 22px;
+                }
+            }
+        }
+        .capabilities{
+            margin-top: 56px;
+            &:first-child{
+                margin-top: 0;
+            }
+            ul{
+                grid-template-columns: repeat(1, 1fr);
+                grid-gap: 18px;
+                li{
+                    font-size: 14px;
+                    line-height: 22px;
+                }
+            }
+        }
+    }
+}

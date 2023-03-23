@@ -1,0 +1,296 @@
+.hero{
+    height: 100vh;
+    position: relative;
+    background: $blue;
+    max-height: 960px;
+    overflow: hidden;
+    .bg{
+        @include absolute;
+        object-fit: cover;
+        opacity: .6;
+        z-index: 0;
+        video{
+            @include absolute;
+            object-fit: cover;
+        }
+    }
+    
+    /*
+    &:after{
+        @include absolute;
+        content: '';
+        background: url(/images/hero.svg) no-repeat bottom;
+        z-index: 1;
+        background-size: 2500px auto;
+    }
+    */
+    .after{
+        @include absolute;
+        z-index: 3;
+        pointer-events: none;
+        svg{            
+            position: absolute;
+            bottom: 0;
+            width: 2500px;
+            height: 965px;
+            left: 50%;
+            transform: translateX(-50%); 
+            .hero_st1{
+                opacity: 0;
+                @include tr(1s);
+            }
+            .hero_st2{
+                @include tre(3s);
+                stroke-dasharray: 2000px 2000px;
+                stroke-dashoffset: 2000px;
+            }
+        }
+    }
+    .text{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -605px;
+        margin-top: -210px;
+        z-index: 4;
+        .h1{
+            @include h1_large;
+            margin-bottom: 15px;
+            color: #fff;
+            @include fade(0,100px);
+            @include tre(1s);
+            @include trd(.5s);
+            span{
+                color: $pink;
+            }
+        }
+        p{
+            @include h3_medium;
+            color: #fff;
+            margin-left: 10px;
+            @include fade(0,100px);
+            @include tre(1s);
+            @include trd(.6s);
+            font-family: $font-secondary;
+        }
+    }
+    .hero_cta{
+        position: absolute;
+        left: 50%;
+        margin-left: -225px;
+        bottom: 100px;
+        display: flex;
+        gap: 40px;
+        z-index: 4;
+        align-items: flex-start;
+        @include fade(0, 100px);
+        @include tre(1s);
+        @include trd(.7s);
+        p{
+            @include body_medium;
+            color: #fff;
+            padding-top: 3px;
+        }
+    }
+    .scroll{
+        background: none;
+        position: absolute;
+        bottom: 70px;
+        right: 50%;
+        margin-right: 302px;
+        left: 0;
+        z-index: 10;
+        height: 96px;
+        overflow: hidden;
+        opacity: 0;
+        cursor: pointer;
+        @include tr(1s);
+        @include trd(.5s);
+        z-index: 1;
+        
+        svg{
+            position: absolute;
+            top: 0;
+            right: 0;
+            path{
+                transition: .3s;
+                fill: $pink;
+            }
+        }
+        &:after{
+            width: 22px;
+            height: 12px;
+            background: url(/images/hero-scroll-ico.svg) no-repeat;
+            background-size: 100% auto;
+            content: '';
+            position: absolute;
+            left: 120px;
+            top: 40px;
+            width: 31px;
+            height: 16px;
+        }
+        &:hover{
+            svg{
+                path{
+                    fill: darken($pink, 10);
+                }
+            }
+        }
+    }
+    &.in{
+        .bg{
+            opacity: .6;
+        }
+        .scroll{
+            opacity: 1;
+        }
+        .after{
+            svg{
+                .hero_st1{
+                    opacity: 1;
+                }
+                .hero_st2{
+                    stroke-dashoffset: 0;
+                }
+            }
+        }
+        .text{
+            h1, p{
+                @include fadein();
+            }
+        }
+        .hero_cta{
+            @include fadein();
+        }
+    }
+    @include responsive('desktop') {
+        .scroll:after{
+            left: 30px;
+        }
+    }
+    @include responsive('desktop-s') {
+        .text{
+            left: 30px;
+            margin-left: 0; 
+        }
+        .scroll:after{
+            display: none;
+        }
+        
+    }
+    @include responsive('mobile-h') {
+        max-height: 690px;
+        min-height: 600px;
+        height: 100vh;
+        .text{
+            left: 30px;
+            margin-left: 0;
+            top: 113px;
+            margin-top: 0;
+            .h1{
+                font-size: 57px;
+                line-height: 62px;
+                margin-bottom: 0;
+                margin-left: -3px;
+            }
+            p{
+                font-size: 15px;
+                line-height: 22px;
+                max-width: 238px;
+                margin-left: 2px;
+            }
+            
+        }
+        .after{
+            display: none;
+        }
+        &:after{
+            content: '';
+            @include absolute;
+            background: url(/images/hero_mobile.svg) no-repeat center;
+            background-size: 768px auto;
+            background-position: bottom left;
+        }
+        .hero_cta{
+            left: 118px;
+            max-width: 223px;
+            margin-left: 0;
+            bottom: 0;
+            height: 160px;
+            flex-direction: column;
+            gap: 5px;
+            max-width: 190px;
+            justify-content: center;
+            padding-bottom: 10px;
+            p{
+                font-size: 14px;
+                line-height: 26px;
+                padding-top: 0;
+            }
+            .button{
+                padding-top: 0;
+            }
+        }
+    }
+    .wp-admin &{
+        video{
+            display: none;
+        }
+        .bg{
+            opacity: .6;
+        }
+        .scroll{
+            opacity: 1;
+        }
+        .after{
+            svg{
+                .hero_st1{
+                    opacity: 1;
+                }
+                .hero_st2{
+                    stroke-dashoffset: 0;
+                }
+            }
+        }
+        .text{
+            left: 30px;
+            margin-left: 0;
+            h1, p{
+                @include fadein();
+            }
+        }
+        .hero_cta{
+            @include fadein();
+        }.bg {
+            opacity: .6;
+        }
+        
+        .scroll {
+            opacity: 1;
+        }
+        
+        .after {
+            svg {
+                .hero_st1 {
+                    opacity: 1;
+                }
+        
+                .hero_st2 {
+                    stroke-dashoffset: 0;
+                }
+            }
+        }
+        
+        .text {
+        
+            h1,
+            p {
+                @include fadein();
+            }
+        }
+        
+        .hero_cta {
+            @include fadein();
+        }
+    }
+}

@@ -1,0 +1,116 @@
+@charset 'UTF-8';
+/*
+Theme Name: Palermo
+Text Domain: twentysixteen
+*/
+
+// Configuration and helpers
+@import
+  'abstracts/_variables',
+  'abstracts/_functions',
+  'abstracts/_mixins_custom',
+  'abstracts/_mixins_theme';
+ 
+// Base stuff
+@import
+  'base/_typography',
+  'base/_base';
+
+// Components
+@import
+  //'components/_site-logo',
+  'components/_menu',
+  'components/_search',
+  //'components/_cart',
+  //'components/_account',
+  'components/_socials',
+  'components/_button',
+  'components/_forms',
+  'components/_posts',
+  //'components/_animations',
+  //'components/_stars',
+  'components/_wysiwyg',
+  'components/_sectiontitle',
+  'components/_pagination',
+  'components/_breadcrumb';
+
+// Hero
+@import
+  //'hero/_simple',
+  'hero/_markets',
+  'hero/_markets_hero_single',
+  'hero/_pagehero',
+  'hero/_pagehero_alt',
+  'hero/_pagehero_simple',
+  'hero/_hero'; 
+
+// Header 
+@import
+  
+  'header/_base',
+  'header/_alert',
+  'header/_mobile';
+
+// Footer
+@import
+  'footer/_base';
+
+
+// Vendor
+@import 
+'vendors/_brands',
+'vendors/_flickity' 
+;
+
+
+// Blocks
+@import
+  'blocks/_intro',
+  'blocks/_markets', 
+  'blocks/_map',
+  'blocks/_featuredposts',
+  'blocks/_clients',
+  'blocks/_cta',
+  'blocks/_content_image',
+  'blocks/_globalteams',
+  'blocks/_missions',
+  'blocks/perspective',
+  'blocks/intro_text',
+  'blocks/ourvision',
+  'blocks/character',
+  'blocks/ourhistory',
+  'blocks/diversity',
+  'blocks/quote',
+  'blocks/values',
+  'blocks/mascot',
+  'blocks/beapart',
+  'blocks/inc5000', 
+  'blocks/twocolumns',
+  'blocks/leadership',
+  'blocks/vehicles',
+  'blocks/featured_news',
+  'blocks/newslist',
+  'blocks/contact_cta',
+  'blocks/news_single',
+  'blocks/contact',
+  'blocks/vehicle_overview',
+  'blocks/vehicle_capabilities',
+  'blocks/contact_information',
+  
+  //'blocks/_videos',
+  //'blocks/_text_block',
+  //'blocks/_gallery',
+  //'blocks/_faqs',
+  'blocks/_buttons';
+  
+
+  /*
+// Woocommerce
+@import
+  'woocommerce/_item',
+  'woocommerce/_archive',
+  'woocommerce/_single',
+  'woocommerce/_cart',
+  'woocommerce/_checkout',
+  'woocommerce/_account';
+*/

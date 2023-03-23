@@ -1,0 +1,72 @@
+.intro{
+    position: relative;
+    padding: 224px 0 280px;
+    .title{
+        @include h2_large;
+        color: $pink;
+        max-width: 744px;
+        z-index: 1;
+        position: relative;
+        @include fade(0,200px);
+        @include tre(1s);
+    }
+    .bg{
+        position: absolute;
+        top: 0;
+        left: 50%;
+        margin-left: -308px;
+        right: 0;
+        bottom: 0;
+        object-fit: cover;
+        opacity: .5;
+        width: auto;
+        opacity: 0;
+        @include tr(2s);
+        img{
+            @include absolute;
+            object-fit: cover;
+        }
+    }
+    &:after{
+        @include absolute;
+        content: '';
+        display: block;
+        background: url(/images/intro.svg) no-repeat top center;
+        background-size: 1680px auto;
+    }
+    &.in{
+        .title{
+            @include fadein();
+        }
+        .bg{
+            opacity: .5;
+        }
+    }
+    @include responsive('tablet-h') {
+        .title{
+            font-size: 32px;
+            line-height: (60/48);
+        }
+    }
+    @include responsive('mobile-h') {
+        padding: 49px 0 158px;
+        .title{
+            font-size: 24px;
+            line-height: 32px;
+        }
+        .bg{
+            width: 325px;
+            height: 295px;
+            bottom: 0;
+            right: 0;
+            top: unset;
+            left: unset;
+        }
+    }
+    .wp-admin &{
+        .bg{
+            opacity: .5 !important;
+            margin-left: -100px;
+        }
+    }
+}

@@ -1,0 +1,88 @@
+.contact_information{
+    background: $lblue url(/images/contact_info.svg) no-repeat bottom center;
+    position: relative;
+    padding-top: 106px;
+    padding-bottom: 166px;
+    background-size: 2500px auto;
+
+    .sectiontitle{
+        color: #fff;
+        border-color: #fff;
+        margin-bottom: 45px;
+    }
+    .content{
+        display: flex;
+        color: #fff;
+        gap: 30px;           
+        @include fade(0, 100px);
+        @include tre(1s);
+        @include trd(.5s);
+
+        @include responsive('tablet-v') {
+            flex-direction: column;
+        }
+
+        .image{
+            width: 395px;
+            aspect-ratio: 1;
+            position: relative;
+            flex: 0 0 auto;
+            margin-right: 60px;
+
+            @include responsive('tablet-h') {
+                width: 250px;
+            }
+            img{
+                @include absolute;
+                object-fit: cover;
+            }
+        }
+        
+        .key{
+            width: 100%;
+            max-width: 465px;
+        }
+        .corporate{
+            width: 100%;
+            max-width: 465px;
+        }
+
+    }
+    .h5{
+        font-size: 19px;
+        font-weight: 700;
+        line-height: 30px;
+        margin-bottom: 20px;
+    }
+    p{
+        font-size: 19px;
+        font-weight: 700;
+        line-height: 30px;
+        margin-bottom: 17px;
+        a{
+            color: #fff;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    .title{
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 46px;
+        margin-bottom: 20px;
+        font-family: $font-primary;
+    }
+    .pos{
+        margin-top: -20px;
+    }
+
+    &.in {
+        .container{
+            .content{
+                @include fadein();
+            }
+        }
+    }
+}

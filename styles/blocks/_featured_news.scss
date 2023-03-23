@@ -1,0 +1,115 @@
+.featured_news{
+    margin-bottom: 120px;
+    margin-top: -38px;
+    .news{
+        display: flex;
+        background: $blue;
+        color: #fff;
+        min-height: 444px;
+        .image{
+            max-width: 532px;
+            width: 100%;
+            flex: 0 0 auto;
+            position: relative;
+            img{
+                @include absolute;
+                object-fit: cover;
+            }
+            .tag{
+                position: absolute;
+                background: $pink;
+                width: 266px;
+                height: 88px;
+                top: 0;
+                left: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                @include body_medium;
+                text-transform: uppercase;
+                color: #fff;
+                font-weight: 600;
+            }
+        }
+        .text{
+            padding: 57px 85px;
+            .date{
+                @include body_medium;
+                margin-bottom: 48px;
+            }
+            .title{
+                @include h2_medium;
+                margin-bottom: 24px;
+                color: #fff;
+                a{
+                    color: #fff;
+                    @include tr(.3s);
+                    &:hover{
+                        color: $pink;
+                    }
+                }
+            }
+            p{
+                @include body_medium;
+                color: #fff;
+            }
+        }
+    }
+    @include responsive('desktop'){
+        .news{
+            .image{
+                max-width: 450px;
+            }
+        }
+    }
+    @include responsive('desktop-s'){
+        .news{
+            .image{
+                max-width: 400px;
+            }
+        }
+    }
+    @include responsive('tablet-h'){
+        .news{
+            .image{
+                max-width: 350px;
+            }
+            .text{
+                padding: 45px 60px;
+                .date{
+                    margin-bottom: 30px;
+                }
+            }
+        }
+    }
+    @include responsive('tablet-v'){
+        .news{
+            flex-direction: column;
+            .image{
+                aspect-ratio: 330/245;
+                max-width: 100%;
+            }
+            .text{
+                padding: 34px 35px 43px;
+                .date{
+                    margin-bottom: 20px;
+                }
+                .title{
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+    @include responsive('mobile-h'){
+        margin-bottom: 62px;
+        margin-top: -54px;
+        .news{
+            .image{
+                .tag{
+                    width: 112px;
+                    height: 50px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,143 @@
+.vehicles{
+    margin-bottom: 72px;
+    .list{
+        margin-bottom: 105px;
+        .i{
+            background: $blue;
+            padding: 70px 75px 130px;
+            color: #fff;            
+            &:nth-child(even){
+                background: #6497B9;
+            }
+        }
+        .title{
+            @include h2_medium;
+            margin-bottom: 20px;
+        }
+        .content{
+            display: flex;
+            gap: 30px;
+            justify-content: space-between;
+        }
+        .contract{
+            border-top: 1px solid $grey;
+            padding-top: 30px;
+            
+            max-width: 480px;
+            width: 100%;
+            margin-top: 10px;
+            p{
+                @include body_medium;
+                font-weight: 600;
+
+                @include responsive('mobile-h') {
+                    font-weight: 500;
+                }
+            }
+            .button{
+                margin-top: 16px;
+            }
+        }
+        .text{
+            width: 100%;
+            max-width: 700px;
+            color: #fff; 
+            p{
+                @include body_medium
+            }
+            
+        }
+    }
+    .vehicles_bottom{
+        
+        .h2{
+            @include h2_medium;
+            color: $blue;
+            margin-bottom: 37px;
+            width: 100%;
+            flex: 0 0 auto;
+            max-width: 770px;
+        }
+        .cols{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .col{
+            width: 100%;
+            max-width: 390px;
+            p{
+                @include body_medium;
+                margin-bottom: 18px;
+            }
+        }
+    }
+    @media only screen and (max-width:1500px) {
+        .list{
+            .contract{
+                max-width: 300px;
+                flex: 0 0 auto;
+            }
+            .text{
+                width: auto;
+            }
+        }
+    }
+    @include responsive('tablet-v') {
+        .list{
+            .contract{
+                width: 100%;
+            }
+            .content{
+                flex-direction: column;
+            }
+            .v_desktop{
+                display: none;
+            }
+            .v_mobile{
+                display: block;
+            }
+            .text{
+                .button{
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+    @include responsive('mobile-h') {
+        margin-bottom: 7px;
+        .list{
+            margin: 0 -30px 48px;
+            .title{
+                margin-bottom: 7px;
+            }
+            .i{
+                padding: 29px 35px 35px;
+            }
+            .contract{
+                margin-bottom: 30px;
+                padding-top: 20px;
+
+                @include responsive('mobile-v') {
+                    margin-bottom: 10px;
+                }
+            }
+            
+        }
+        .vehicles_bottom{
+            .h2{
+                margin-bottom: 10px;
+            }
+            .cols{
+                gap: 0;
+            }
+            .col{
+                p{
+                    margin-bottom: 14px;
+                }
+            }
+        }
+        
+
+    }
+}

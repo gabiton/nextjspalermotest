@@ -1,0 +1,79 @@
+ .mascot{
+    min-height: 670px;
+    background: $grey-bg;
+    .container{
+        position: relative;
+        
+    }
+    .image {
+        position: absolute;
+        top: -30px;
+        right: 206px;
+        max-width: 403px;            
+        @include fade(0, 100px);
+        @include tre(1s);
+    }
+    .sectiontitle{
+        margin-bottom: 50px;
+    }
+    .text{
+        max-width: 1079px;
+        padding-right: 400px;              
+        @include fade(0, 100px);
+        @include tre(1s);
+
+        .title{
+            @include h1_small;
+            color: $blue;
+            margin-bottom: 27px;
+        }
+        p{
+            @include body_medium;
+        }
+    }
+    @include responsive('desktop') {
+        .image{
+            right: 50px;
+        }
+    }
+    @include responsive('desktop-s') {
+        .image{
+            width: 350px;
+        }
+    }
+    @include responsive('mobile-h') {
+        padding-bottom: 50px;
+        min-height: unset;
+        .image{
+            width: 100px;
+            right: 54px;
+            top: -15px;
+        }
+        .sectiontitle{
+            margin-bottom: 30px;
+        }
+        .text{
+            padding-right: 0;
+            .title{
+                font-size: 38px;
+                line-height: 50px;
+                margin-bottom: 14px;
+            }
+        }
+    }
+    .wp-admin &{
+        padding-top: 50px;
+        .image{
+            right: 0;
+            top: 0;
+        }
+    }
+
+    &.in {
+        .container{
+            .image,.text{
+                @include fadein();
+            }
+        }
+    }
+ }

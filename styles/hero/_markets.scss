@@ -1,0 +1,204 @@
+.markets_hero{
+    background: $pink;
+    padding-top: 102px;
+    color: #fff;
+    padding-bottom: 210px;
+    position: relative;
+
+    &.blue{
+        background: $blue;
+        /*
+        &:before{
+            background-image: url(/images/markets_hero_blue.svg);
+        }
+        */
+        .bg{
+            svg{
+                path{
+                    stroke: rgba(73, 110, 136, 0.9);
+                    stroke-opacity: 1;
+                }
+                
+            }
+        }
+    }
+    /*
+    &:before{
+        @include absolute;
+        content: '';
+        background: url(/images/markets_hero.svg) no-repeat center;
+        background-size: 2500px auto;
+    }
+    */
+    .bg{
+        @include absolute;
+        overflow: hidden;
+        svg{
+            position: absolute;
+            height: 130%;
+            width: 2500px;
+            left: 50%;
+            margin-left: -1250px;
+            top: -30%;
+            path{
+                stroke-dasharray: 3000px 3000px;
+                stroke-dashoffset: 3000px;
+                @include tr(4s);
+            }
+        }
+    }
+    .container{
+        position: relative;
+    }
+    .pretitle{
+        font-weight: 600;
+        font-size: 19px;
+        line-height: 34px;
+        color: #fff;
+        margin-bottom: 95px;
+        @include fade(0,100px);
+        @include tre(1s);
+        text-transform: uppercase; 
+        a{
+            color: $blue;
+            @include tr(.3s);
+            &:hover{
+                color: $pink;
+            }
+        }
+    }
+    .title{
+        @include h1_small;
+        margin-bottom: 45px;
+        @include fade(0, 100px);
+        @include tre(1s);
+        @include trd(.2s);
+    }
+    .market_intro_text{
+        @include h2_medium;
+        margin-bottom: 63px;
+        max-width: 1100px;
+        @include fade(0, 100px);
+        @include tre(1s);
+        @include trd(.4s);
+    }
+    .text_right{
+        //padding-left: 620px;
+        display: flex;
+        gap: 40px;
+        .line{
+            height: 1px;
+            width: 578px;
+            flex: 0 0 auto;
+            margin-top: 18px;
+            position: relative;
+            
+            &:before{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 0;
+                height: 100%;
+                background: #fff;
+                width: 0;
+                @include tre(2s);
+                content: '';
+            }
+        }
+        p{
+            @include body_medium;
+            max-width: 635px;
+            @include fade(0, 100px);
+            @include tre(1s);
+            @include trd(.6s);
+        }
+    }
+    &.in{
+        .pretitle, .title, .market_intro_text, .text_right p  {
+            @include fadein();
+        }
+        .text_right .line:before{
+            width: 100%;
+        }
+        .bg{
+            svg{
+                path{
+                    stroke-dashoffset: 0;
+                }
+            }
+        }
+    }
+    @include responsive('tablet-h') {
+        .text_right{
+            .line{
+                width: 300px;
+            }
+        }
+    }
+    @include responsive('tablet-v') {
+        margin-bottom: 50px;
+    }
+    @include responsive('mobile-h') {
+        padding-top: 50px;
+        padding-bottom: 96px;
+        margin-bottom: 35px;
+        /*
+        &:before{
+            background-image: url(/images/markets_hero-mobile-01.svg);
+            background-size: auto 100%;
+            background-position: 34.5% 50%;
+        }
+        */
+        .bg{
+            svg{
+                margin-left: -1105px;
+                height: 100%;
+                top: 0;
+            }
+        }
+        .pretitle{
+            font-size: 12px;
+            line-height: 20px;
+            margin-bottom: 53px;
+        }
+        .title{
+            font-weight: 500;
+            font-size: 38px;
+            line-height: 50px;
+            margin-bottom: 16px;
+        }
+        .market_intro_text{
+            font-size: 20px;
+            line-height: 30px;
+            margin-bottom: 40px;
+            max-width: 306px;
+        }
+        .text_right{
+            flex-direction: column;
+            .line{
+                margin-top: 0;
+                width: 100%;
+            }
+            p{
+                font-size: 14px;
+                line-height: 22px;
+            }
+        }
+    }
+
+    .wp-admin &{
+        .pretitle, .title, .market_intro_text, .text_right p  {
+            @include fadein();
+        }
+        .text_right .line:before{
+            width: 100%;
+        }
+        .bg{
+            svg{
+                path{
+                    stroke-dashoffset: 0;
+                }
+            }
+        }
+    }
+}

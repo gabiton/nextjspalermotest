@@ -1,0 +1,32 @@
+@mixin wysiwyg() {
+    h2{
+        @include h2_medium;
+        margin-bottom: 40px
+    }
+    h3{
+        @include h3_medium;
+        margin-bottom: 40px;
+    }
+    figure{
+        margin-bottom: 40px;
+        img{
+            width: 100%;
+        }
+    }
+    p{
+        @include body_medium;
+        margin-bottom: 19px;
+    }
+
+    ul, ol {
+		padding-left: 20px;
+		@include body_medium;
+        margin-bottom: 19px;
+		line-height: 1.6;
+	}
+	ul {
+		li {
+			list-style: disc;
+		}
+	}
+}

@@ -1,0 +1,113 @@
+.button{
+    font-family: $font-secondary;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    text-transform: uppercase;
+    color: $pink;
+    border-bottom: 2px solid $pink;
+    padding: 12px 0;
+    @include tr(.3s);
+    position: relative;
+    display: inline-block;
+    background: none;
+    &:after{
+        height: 2px;
+        position: absolute;
+        left: 0;
+        width: 0%;
+        background: $blue;
+        content: '';
+        bottom: -2px;
+        @include tr(.5s);
+    }
+
+    svg{
+        width: 24px;
+        display: inline-block;
+        margin-left: 10px;
+        vertical-align: top;
+        margin-top: 0;
+        path{
+            @include tr(.3s);
+        }
+    }
+
+    &:hover{
+        color: $blue;
+        &:after{
+            width: 100%;
+        }
+        svg{
+            path{
+                stroke: $blue;
+            }
+        }
+    }
+    /*
+    &:after{
+        background: url(/images/ico-arrow-pink.svg) no-repeat center;
+        content: '';
+        width: 24px;
+        height: 18px;
+        display: inline-block;
+        margin-left: 14px;
+        vertical-align: top;
+        margin-top: 0;
+    }
+    */
+    
+    &.white_pink{
+        color: #fff;
+        border-color: #fff;
+        svg{
+            path{
+                stroke: #fff;
+            }
+        }
+        &:after{
+            background: $pink;
+        }
+        &:hover{
+            color: $pink;
+            svg{
+                path{
+                    stroke: $pink;
+                }
+            }
+        }
+    }
+
+    &.white_blue{
+        color: #fff;
+        border-color: #fff;
+        svg{
+            path{
+                stroke: #fff;
+            }
+        }
+        &:after{
+            background: $blue;
+        }
+        &:hover{
+            color: $blue;
+            svg{
+                path{
+                    stroke: $blue;
+                }
+            }
+        }
+    }
+
+    @include responsive('mobile-h') {
+        font-size: 13px;
+        line-height: 20px;
+        padding: 8px 0 4px;
+        svg{
+            width: 20px;
+            height: 14px;
+            margin-top: 3px;
+            margin-left: 3px;
+        }
+    }
+}

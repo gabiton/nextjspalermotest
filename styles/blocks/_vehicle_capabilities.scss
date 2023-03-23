@@ -1,0 +1,112 @@
+.vehicle_capabilities{
+    padding-top: 89px;
+    padding-bottom: 77px;
+
+    .sectiontitle{
+        margin-bottom: 56px
+    }
+    p{
+        @include body_medium;
+        max-width: 838px;
+        @include fade(0, 100px);
+        @include tre(1s);
+    }
+    .capabilities_grid {
+        margin-top: 101px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 47px;
+
+        .i {
+            border-left: 1px solid #C7C7C7;
+            padding-left: 47px;
+            @include fade(0, 100px);
+            @include tre(1s);
+
+            &:nth-child(1) {
+                @include trd(.2s)
+            }
+
+            &:nth-child(2) {
+                @include trd(.4s)
+            }
+
+            &:nth-child(3) {
+                @include trd(.6s)
+            }
+
+            .title {
+                color: $pink;
+                @include h3_large;
+                margin-bottom: 33px;
+            }
+
+            ul {
+                @include slash_list;
+                li{
+                    margin-bottom: 23px
+                }
+            }
+        }
+    }
+
+   
+
+    &.in {
+        p{
+            @include fadein();
+        }
+        .capabilities_grid {
+            .i {
+                @include fadein();
+            }
+        }
+
+   
+    }
+
+    @include responsive('tablet-v') {
+        .capabilities_grid {
+            margin-top: 35px;
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+
+            .i {
+                border-left: 0;
+                padding-left: 0;
+            }
+        }
+    }
+
+    @include responsive('mobile-h') {
+        padding-top: 42px;
+        padding-bottom: 65px;
+
+        .sectiontitle {}
+
+        .capabilities_grid {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 26px;
+
+            .i {
+                border-left: 0;
+                padding-left: 0;
+
+                .title {
+                    font-size: 24px;
+                    line-height: 32px;
+                }
+
+                p {
+                    font-size: 14px;
+                    line-height: 22px;
+                }
+            }
+        }
+
+        
+    }
+}

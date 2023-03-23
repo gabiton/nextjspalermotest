@@ -1,0 +1,91 @@
+
+/// @type List
+
+$font-primary: 'WhyteInktrap', sans-serif;
+$font-secondary: 'Montserrat', sans-serif;
+$default-font: $font-secondary;
+
+/// @type Color
+$pink : #D64159;
+$dblue: #001727;
+$blue: #003356;
+$blue-accent: #003356;
+$lblue: #6497B9;
+$grey: #F1F1F1;
+$gold: #CE9472;
+$dark: #000000;
+$white: #fff;
+
+$red: #f00;
+
+$primary-color: #000;
+$secondary-color: $blue;
+$fog-grey: #ddd;
+$evening-grey: #ddd;
+$light-grey: #ddd;
+
+$grey-bg: #f1f1f1;
+$grey: #c7c7c7;
+
+//$coloffset: 1480px/12 + 30px;
+$coloffset: calc( 8.33%  );
+
+/// @type Length
+$site-widths: (
+  'full-width': 100%,
+  'max-width': 1480px,
+) !default;
+
+$font-sizes: (
+  'h1': 90px,
+  'h2': 70px,
+  'h3': 36px,
+  'h4': 19px,
+  'h5': 18px,
+  'h6': 16px,
+  'h7': 12px,
+) !default;
+
+$font-sizes-tablet: (
+  'h1': 70px,s
+  'h2': 70px,
+  'h3': 28px,
+  'h4': 24px,
+  'h5': 16px,
+  'h6': 16px,
+  'h7': 12px,
+) !default;
+
+$font-sizes-mobile: (
+  'h1': 70px,
+  'h2': 40px,
+  'h3': 28px,
+  'h4': 24px,
+  'h5': 16px,
+  'h6': 16px,
+  'h7': 12px,
+  ) !default;
+
+$font-weights: (
+  'light': 300,
+  'regular': 400,
+  'medium': 500,
+  'semibold': 600,
+  'demi': 600,
+  'bold': 700,
+) !default;
+
+
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+
+$breakpoints: (
+'mobile-s': 400px,
+'mobile-v': 600px,
+'mobile-h': 750px,
+'tablet-v': 900px,
+'tablet-h': 1050px,
+'desktop-s': 1200px,
+'desktop': 1440px,
+) !default;
+

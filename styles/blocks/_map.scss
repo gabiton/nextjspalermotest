@@ -1,0 +1,138 @@
+.map{
+    padding-top: 143px;
+    padding-bottom: 270px;
+    background-color: #002035;
+    position: relative;
+    overflow: hidden;
+    overflow: hidden;
+    &:after{
+        @include absolute;
+        content: '';
+        background: url(/images/maplines.svg) no-repeat center;
+    }
+    .text{
+        max-width: 465px;
+        position: relative;
+        z-index: 1;
+    }
+    .title{
+        color: $pink;
+        @include h2_large;
+        margin-bottom: 365px;
+        position: relative;
+        @include tre(1s);
+        @include fade(0,100px);
+        @include trd(.5s);
+        &:after{
+            width: 1px;
+            height: 305px;
+            background: $pink;
+            top: 100%;
+            left: 20px;
+            margin-top: 30px;
+            content: '';
+            position: absolute;
+            @include tre(1s);
+            @include trd(1s);
+            transform: scaleY(0);
+            transform-origin: 0 0;
+        }
+    }
+    .t{
+        @include tre(1s);
+        @include fade(0,100px);
+        @include trd(.6s);
+    }
+    p{
+        @include body_medium;
+        color: #fff;
+        margin-bottom: 30px;
+    }
+    .img{
+        position: absolute;
+        top: 50%;
+        left: 50%; 
+        margin-top: -410px;
+        margin-left: -520px;
+        opacity: 0;
+        @include tr(1s);
+        .square {
+            @include fade(0,50px);
+            @include tre(1s);
+            &:nth-child(1),&:nth-child(11),&:nth-child(21),&:nth-child(31) { @include trd(.5s) }
+            &:nth-child(2),&:nth-child(12),&:nth-child(22),&:nth-child(32) { @include trd(.8s) }
+            &:nth-child(3),&:nth-child(13),&:nth-child(23),&:nth-child(33) { @include trd(1.1s) }
+            &:nth-child(4),&:nth-child(14),&:nth-child(24),&:nth-child(34) { @include trd(1.4s) }
+            &:nth-child(5),&:nth-child(15),&:nth-child(25),&:nth-child(35) { @include trd(1.7s) }
+            &:nth-child(6),&:nth-child(16),&:nth-child(26),&:nth-child(36) { @include trd(2s) }
+            &:nth-child(7),&:nth-child(17),&:nth-child(27),&:nth-child(37) { @include trd(2.3s) }
+            &:nth-child(8),&:nth-child(18),&:nth-child(28),&:nth-child(38) { @include trd(2.6s) }
+            &:nth-child(9),&:nth-child(19),&:nth-child(29),&:nth-child(39) { @include trd(2.9s) }
+            &:nth-child(10),&:nth-child(20),&:nth-child(30),&:nth-child(40) { @include trd(3.1s) }
+        }
+    }
+    &.in{
+        .title{
+            @include fadein();
+            &:after{
+                transform: scaleY(1);
+            }
+        }
+        .t{
+            @include fadein();
+        }
+        .img{
+            opacity: 1;
+            rect{
+                @include fadein();
+            }
+        }
+    }
+    @include responsive('tablet-h') {
+        padding-top: 100px;
+        padding-bottom: 150px;
+        .img{  
+            width: 80%;
+            height: auto;
+            margin-left: -40%;
+            top: 50%;
+            margin-top: -40%;
+            aspect-ratio: 1324/766;
+            svg{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    @include responsive('mobile-h') {
+        padding-top: 42px;
+        height: auto;
+        padding-bottom: 74px;
+        &:after{
+            background-size: cover;
+            background-position: 42% 50%;
+        }
+        .title{
+            font-size: 24px;
+            line-height: 32px;
+            margin-bottom: 191px;
+            &:after{
+                height: 167px;
+                margin-top: 10px;
+                left: 30px;
+            }
+        } 
+        p{ 
+            font-size: 14px;
+            line-height: 22px;
+            margin-bottom: 20px;
+        }
+        .img{  
+            width: 320px;
+            height: 229px;
+            margin-left: -160px;
+            top: 78px;
+            margin-top: 0;
+        }
+    }
+} 

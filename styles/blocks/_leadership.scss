@@ -1,0 +1,118 @@
+.leadership{
+    padding-top: 105px;
+    padding-bottom: 116px;
+    .sectiontitle{
+        margin-bottom: 80px;
+        
+        &.in{
+            @include fadein();
+        }
+    }
+    .leadership_grid{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-gap: 78px 40px;
+        .i{
+            @include tre(1s);
+            @include fade(0,100px);
+
+            &.in{
+                @include fadein();
+            }
+        }
+        .image{
+            position: relative;
+            margin-bottom: 30px;
+            img{
+                display: block;
+                aspect-ratio: 1;
+                object-fit: cover;
+            }
+            .li{
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                background: $lblue;
+                width: 55px;
+                height: 55px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #fff;
+                @include tr(.3s);
+                span{
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 5px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: 2px solid #fff;
+                }
+                &:hover{
+                    background: $blue;
+                }
+            }
+        }
+        .i_title{
+            font-size: 23px;
+            line-height: 34px;
+            font-weight: 700;
+            color: $blue;
+        }
+        .i_position{
+            font-size: 19px;
+            line-height: 30px;
+        }
+    }
+    @include responsive('tablet-v') {
+        .leadership_grid{
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    @include responsive('mobile-h') {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        .sectiontitle{
+            margin-bottom: 40px;
+        }
+        .leadership_grid{
+            
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 35px;
+            .image{
+                margin-bottom: 20px;
+                .li{
+                    width: 29px;
+                    height: 29px;
+                    font-size: 9px;
+                    span{
+                        width: 17px;
+                        height: 17px;
+                    }
+                }
+            }
+            .i_title{
+                font-size: 15px;
+                line-height: 22px;
+            }
+            .i_position{
+                font-size: 14px;
+                line-height: 22px;
+            }
+        }
+    }
+    @include responsive('mobile-v') {
+        .leadership_grid {
+            max-width: 390px;
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    .wp-admin & {
+        .leadership_grid .i,
+        .sectiontitle {
+            @include fadein();
+        }
+    }
+}

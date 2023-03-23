@@ -1,0 +1,130 @@
+.content_image{
+    margin-bottom: 156px;
+    position: relative;
+    overflow: hidden;
+    .container{
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        align-items: center;
+    }
+    .image{
+        max-width: 823px;
+        width: 100%;
+        img{
+            aspect-ratio: 823/580;
+            object-fit: cover;
+        }
+        opacity: 0;
+        @include tr(1s);
+    }
+    &.image_right{
+        .image{
+            order: 2;
+        }
+        .text{
+            @include fade(100px, 0);
+        }
+    }
+    .text{
+        width: 100%;
+        max-width: 485px;
+        @include fade(-100px, 0);
+        @include tre(1s);
+    }
+    h2{
+        @include h2_large;
+        color: $pink;
+        margin-bottom: 13px;
+        font-family: $font-primary;
+    }
+    p{
+        @include body_medium;
+        margin-bottom: 25px;
+        max-width: 440px;
+    }
+    .image_mobile{
+        display: none;
+    }
+    &.small{
+        .image{
+            max-width: 700px;
+            img{
+                aspect-ratio: 700/580;
+            }
+        }
+        .text{
+            max-width: 643px;
+        }
+        h2{
+            @include h2_medium;
+        }
+        p{
+            max-width: 582px;
+        }
+    }
+    &.in{
+        .image{
+            opacity: 1;
+        }
+        .text {
+            @include fadein();
+        }
+        &.image_right{
+            .text{
+                @include fadein();
+            }
+        }
+    }
+    @include responsive('tablet-v') {
+        margin-bottom: 100px;
+        .text{
+            max-width: 700px;
+        }
+        .container{
+            flex-direction: column;
+        }
+        .image{
+            display: none;
+        }
+        .image_mobile{
+            display: block;
+            margin-bottom: 20px;
+            img{
+                aspect-ratio: 330/200;
+                object-fit: cover;
+            }
+        }
+        
+    }
+    @include responsive('mobile-h') {
+        margin-bottom: 57px;
+        h2{
+            font-size: 24px;
+            line-height: 32px;
+            margin-bottom: 20px;
+        }
+        p{
+            font-size: 14px;
+            line-height: 22px;
+            margin-bottom: 15px;
+        }
+    }
+}
+.markets_hero+.content_image{
+    margin-top: -45px;
+    position: relative;
+    z-index: 1;
+    @include responsive('desktop-s') {
+        margin-top: 50px;
+    }
+    @include responsive('tablet-v') {
+        margin-top: 0;
+    }
+}
+.pagehero+.content_image{
+    margin-top: 134px;
+    @include responsive('mobile-h') {
+        margin-top: 43px;
+    }
+}

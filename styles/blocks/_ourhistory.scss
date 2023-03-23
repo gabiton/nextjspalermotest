@@ -1,0 +1,113 @@
+.ourhistory{
+    padding-bottom: 160px;
+    background: #F1F1F1;
+    .container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 0 30px;
+        padding-left: 120px;
+
+        @include responsive('tablet-h') {
+           padding-left: 30px; 
+        }
+    }
+    .sectiontitle{
+        margin-bottom: 99px;
+    }
+    .left_col{
+        display: inline-block;
+        width: 48%;           
+        @include fade(0, 100px);
+        @include tre(1s);
+        @include trd(.5s);
+
+        @include responsive('tablet-h') {
+            width: 100%;
+            padding-bottom: 40px;
+        }
+
+        @include responsive('tablet-v') {
+            padding-bottom: 0;
+        }
+
+        .title{
+            color: $blue;
+            @include h1_small;
+            span{
+                color: $pink;
+            }
+        }
+        
+    }
+    .right_col{
+        display: inline-block;
+        width: 48%;    
+        padding-right: 110px;               
+        @include fade(0, 100px);
+        @include tre(1s);
+        @include trd(1s);
+
+        @include responsive('tablet-h') {
+            width: 100%;
+            padding-right: 0;
+        }
+
+        p{
+            @include body_medium;
+        }
+    }
+    @include responsive('tablet-v') {
+        .container{
+            padding-left: 30px;
+        }
+        .left_col{
+            .title{
+                margin-bottom: 30px;
+            }
+        }
+        .right_col{
+            max-width: unset;
+            margin-right: 0;
+        }
+    }
+    @include responsive('mobile-h') {
+        padding-bottom: 40px;
+        .sectiontitle{
+            margin-bottom: 25px;
+        }
+        .left_col{
+            .title{
+                font-size: 38px;
+                line-height: 50px;
+                margin-bottom: 18px;
+            }
+        }
+        .right_col{
+            margin-right: 0;
+        }
+    }
+    .wp-admin &{
+        .container{
+            padding-left: 30px;
+            gap: 0;
+        }
+        .left_col {
+            width: 50%;
+        }
+        .right_col{
+            width: 50%;
+            margin-right: 0;
+            padding-left: 30px;
+        }
+        
+    }
+    
+    &.in {
+        .container{
+            .left_col, .right_col{
+                @include fadein();
+            }
+        }
+    }
+}

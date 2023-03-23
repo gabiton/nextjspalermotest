@@ -1,0 +1,7 @@
+{
+    "tabWidth": 4,
+    "useTabs": true,
+    "[javascript]": {
+        "editor.formatOnSave": true
+    }
+}

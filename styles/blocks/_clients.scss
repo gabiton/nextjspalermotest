@@ -1,0 +1,74 @@
+.clients{
+    padding-bottom: 167px;
+    .title{
+        color: $pink;
+        font-weight: 500;
+        font-family: $font-primary;
+        font-size: 48px;
+        line-height: 60px;
+        border-bottom: 1px solid #C7C7C7;
+        padding-bottom: 52px;
+        margin-bottom: 64px;
+        @include fade(0,200px);
+        @include tre(1s);
+    }
+    .logos{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        img{ 
+            max-width: 145px;
+            opacity: 0;
+            @include tr(1s);
+            &:nth-child(1) { @include trd(.1s) }
+            &:nth-child(2) { @include trd(.2s) }
+            &:nth-child(3) { @include trd(.3s) }
+            &:nth-child(4) { @include trd(.4s) }
+            &:nth-child(5) { @include trd(.5s) }
+            &:nth-child(6) { @include trd(.6s) }
+        }
+    }
+    &.in{
+        .title{
+            @include fadein();
+        }
+        .logos{
+            img{
+                opacity: 1;
+            }
+        }
+    }
+    @include responsive('tablet-h') {
+        .logos{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 50px 20px;
+            text-align: center;
+            img{
+                margin: 0 auto;
+            }
+        }
+    }
+    @include responsive('mobile-h') {
+        padding-bottom: 68px;
+        .title{
+            font-size: 24px;
+            line-height: 32px;
+            padding-bottom: 20px;
+            margin-bottom: 50px;
+        }
+        .logos{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 50px 20px;
+            text-align: center;
+            img{
+                max-height: 66px;
+                max-width: 66px;
+                margin: 0 auto;
+            }
+        }
+    }
+}
