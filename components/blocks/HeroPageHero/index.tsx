@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Svg from "./pagehero"
+//import Svg from "./pagehero"
 
 export default function HeroPageHero({ data }) {
 	let blockClass = ["pagehero", "in"];
@@ -23,7 +23,7 @@ export default function HeroPageHero({ data }) {
 						</div>
 					)}
 					<div className="after">
-						<Svg />
+						
 					</div>
 				</div>
 			</div>
